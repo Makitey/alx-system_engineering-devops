@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Tells a story with each /etc/password entry
+
+IFS=':'
+while read -r user pass uid gid username_f homedir loginshell; do
+      echo "The user $user is part of the $gid gang, lives in $homedir and rides $loginshell. $uid's place is protected by the passcode $pass, more info about the user here: $username_f"
+done </etc/passwd
